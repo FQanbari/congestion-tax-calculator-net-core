@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "congestion-tax-calculator-net-core", "congestion-tax-calculator-net-core.csproj", "{0ACBA030-5B00-4934-B48D-5D2EBA61C718}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "congestion-tax-calculator-net-core.Tests", "..\Test\congestion-tax-calculator-net-core.Tests\congestion-tax-calculator-net-core.Tests.csproj", "{43BD22ED-1C45-47C2-B076-3877A2FB8B08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0ACBA030-5B00-4934-B48D-5D2EBA61C718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ACBA030-5B00-4934-B48D-5D2EBA61C718}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ACBA030-5B00-4934-B48D-5D2EBA61C718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43BD22ED-1C45-47C2-B076-3877A2FB8B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43BD22ED-1C45-47C2-B076-3877A2FB8B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43BD22ED-1C45-47C2-B076-3877A2FB8B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43BD22ED-1C45-47C2-B076-3877A2FB8B08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
