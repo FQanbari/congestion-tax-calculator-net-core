@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.6.33815.320
+VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "congestion-tax-calculator-net-core", "congestion-tax-calculator-net-core.csproj", "{0ACBA030-5B00-4934-B48D-5D2EBA61C718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "congestion-tax-calculator-net-core", "netcore\congestion-tax-calculator-net-core.csproj", "{A35FF9AD-5087-4BAA-B94F-00421DC8572A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "congestion-tax-calculator-net-core.Tests", "..\Test\congestion-tax-calculator-net-core.Tests\congestion-tax-calculator-net-core.Tests.csproj", "{43BD22ED-1C45-47C2-B076-3877A2FB8B08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "congestion-tax-calculator-net-core.Tests", "test\congestion-tax-calculator-net-core.Tests\congestion-tax-calculator-net-core.Tests.csproj", "{F9E90080-95E5-4A71-9526-97097340A20E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0ACBA030-5B00-4934-B48D-5D2EBA61C718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0ACBA030-5B00-4934-B48D-5D2EBA61C718}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0ACBA030-5B00-4934-B48D-5D2EBA61C718}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0ACBA030-5B00-4934-B48D-5D2EBA61C718}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43BD22ED-1C45-47C2-B076-3877A2FB8B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43BD22ED-1C45-47C2-B076-3877A2FB8B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43BD22ED-1C45-47C2-B076-3877A2FB8B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43BD22ED-1C45-47C2-B076-3877A2FB8B08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A35FF9AD-5087-4BAA-B94F-00421DC8572A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35FF9AD-5087-4BAA-B94F-00421DC8572A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35FF9AD-5087-4BAA-B94F-00421DC8572A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35FF9AD-5087-4BAA-B94F-00421DC8572A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9E90080-95E5-4A71-9526-97097340A20E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9E90080-95E5-4A71-9526-97097340A20E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9E90080-95E5-4A71-9526-97097340A20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9E90080-95E5-4A71-9526-97097340A20E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {725C4D20-4E20-4957-B2BD-F885433170FD}
+		SolutionGuid = {A9679012-5522-4DEF-99E6-A071A5D62E31}
 	EndGlobalSection
 EndGlobal

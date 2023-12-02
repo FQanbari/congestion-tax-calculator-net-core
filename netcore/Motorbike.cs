@@ -8,9 +8,6 @@ namespace congestion.calculator
 {
     public class Motorbike : Vehicle
     {
-        public string GetVehicleType()
-        {
-            return "Motorbike";
-        }
+        public VehicleEnum Type => VehicleEnum.Motorcycle;
     }
 }

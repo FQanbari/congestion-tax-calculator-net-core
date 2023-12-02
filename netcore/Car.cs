@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace congestion.calculator
 {
-    public interface Vehicle
+    public class Car : Vehicle
     {
-        String GetVehicleType();
+        public VehicleEnum Type => VehicleEnum.Car;
     }
 }
