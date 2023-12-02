@@ -21,7 +21,7 @@ namespace congestion_tax_calculator_net_core.Tests
         public void GetTax_SinglePassWithinOneHour_ReturnsCorrectFee(VehicleEnum vehicle , string datesStr, int expectedFee)
         {
             // Arrange
-            Vehicle v = VehicleFactory.Create(vehicle);
+            IVehicle v = VehicleFactory.Create(vehicle);
             var dateTimes = new List<DateTime>();
             string[] dates = datesStr.Split(";");
             foreach (string date in dates)
@@ -42,7 +42,7 @@ namespace congestion_tax_calculator_net_core.Tests
         public void GetTax_MultiplePassesWithinOneHour_ReturnsCorrectTotalFee(VehicleEnum vehicle, string datesStr, int expectedFee)
         {
             // Arrange
-            Vehicle v = VehicleFactory.Create(vehicle);
+            IVehicle v = VehicleFactory.Create(vehicle);
             var dateTimes = new List<DateTime>();
             string[] dates = datesStr.Split(";");
             foreach (string date in dates)
@@ -63,7 +63,7 @@ namespace congestion_tax_calculator_net_core.Tests
         public void GetTax_TollFreeVehicle_ReturnsZero(VehicleEnum vehicle, string datesStr, int expectedFee)
         {
             // Arrange
-            Vehicle v = VehicleFactory.Create(vehicle);
+            IVehicle v = VehicleFactory.Create(vehicle);
             var dateTimes = new List<DateTime>();
             string[] dates = datesStr.Split(";");
             foreach (string date in dates)
@@ -84,7 +84,7 @@ namespace congestion_tax_calculator_net_core.Tests
         public void GetTax_TollFreeDate_ReturnsZero(VehicleEnum vehicle, string datesStr, int expectedFee)
         {
             // Arrange
-            Vehicle v = VehicleFactory.Create(vehicle);
+            IVehicle v = VehicleFactory.Create(vehicle);
             var dateTimes = new List<DateTime>();
             string[] dates = datesStr.Split(";");
             foreach (string date in dates)

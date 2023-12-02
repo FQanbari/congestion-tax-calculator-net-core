@@ -47,7 +47,7 @@ public class CongestionTaxCalculator
          * @param dates   - date and time of all passes on one day
          * @return - the total congestion tax for that day
          */
-    public int GetTax(Vehicle vehicle, DateTime[] dates)
+    public int GetTax(IVehicle vehicle, DateTime[] dates)
     {
         if (vehicle == null || dates == null || dates.Length == 0)
             return 0;
@@ -79,14 +79,14 @@ public class CongestionTaxCalculator
         return Math.Min(totalFee, _maximumTollTaxPerDay); // Maximum daily fee is 60
     }
 
-    private bool IsTollFreeVehicle(Vehicle vehicle)
+    private bool IsTollFreeVehicle(IVehicle vehicle)
     {
         if (vehicle == null) return false;
 
         return tollFreeVehicleTypes.Contains(vehicle.Type);
     }
 
-    public int GetTollFee(DateTime date, Vehicle vehicle)
+    public int GetTollFee(DateTime date, IVehicle vehicle)
     {
         if (IsTollFreeDate(date) || IsTollFreeVehicle(vehicle))
             return 0;

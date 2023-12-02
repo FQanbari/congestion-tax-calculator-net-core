@@ -17,14 +17,14 @@ namespace congestion.calculator
         Bus = 6,
         Car = 7
     }
-    public interface Vehicle
+    public interface IVehicle
     {
         VehicleEnum Type { get; }
     }
 
     public static class VehicleFactory
     {
-        public static Vehicle Create(VehicleEnum vehicleType)
+        public static IVehicle Create(VehicleEnum vehicleType)
         {
             switch (vehicleType)
             {
