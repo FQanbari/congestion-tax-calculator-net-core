@@ -13,12 +13,16 @@ namespace congestion.calculator.Data
         public DbSet<TollFreeDate> TollFreeDates { get; set; }
         public DbSet<TollFreeVehicle> ExemptVehicles { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
-        public DbSet<TaxRule> TaxRules { get; set; }
+        public DbSet<TollTaxRule> TaxRules { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+   
+        public CongestionTaxDbContext(DbContextOptions<CongestionTaxDbContext> options) : base(options)
+        { }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Configure your database connection here
-            optionsBuilder.UseSqlite("Data Source=database.db;Version=3;New=True;Compress=True;");
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CongestionTaxDbContext).Assembly);
         }
     }
 

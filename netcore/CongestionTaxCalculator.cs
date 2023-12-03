@@ -1,45 +1,25 @@
 using System;
 using System.Collections.Generic;
-using congestion.calculator;
+using System.Linq;
+using congestion.calculator.Models;
+using congestion.calculator.Service;
 public class CongestionTaxCalculator
 {
-    private readonly List<DateTime> tollFreeDates;
-    private readonly List<(TimeSpan startTime, TimeSpan endTime, int amount)> taxRules;
-    private readonly HashSet<VehicleEnum> tollFreeVehicleTypes;
+    private readonly List<TollTaxRule> _taxRules;
+    private readonly List<TollFreeVehicle> _tollFreeVehicleTypes;
     private const int _maximumTollTaxPerDay = 60;
     private const int _singlChargeRuleIntervalInMinutes = 60;
 
-    public CongestionTaxCalculator()
+    public CongestionTaxCalculator(List<TollTaxRule> taxRules, List<TollFreeVehicle> tollFreeVehicles)
     {
-        
+
         // Initialize tax rules
-        taxRules = new List<(TimeSpan startTime, TimeSpan endTime, int amount)>
-        {
-            (new TimeSpan(6, 0, 0), new TimeSpan(6, 29, 0), 8),
-            (new TimeSpan(6, 30, 0), new TimeSpan(6, 59, 0), 13),
-            (new TimeSpan(7, 0, 0), new TimeSpan(7, 59, 0), 18),
-            (new TimeSpan(8, 0, 0), new TimeSpan(8, 29, 0), 13),
-            (new TimeSpan(8, 30, 0), new TimeSpan(14, 59, 0), 8),
-            (new TimeSpan(15, 0, 0), new TimeSpan(15, 29, 0), 13),
-            (new TimeSpan(15, 30, 0), new TimeSpan(16, 59, 0), 18),
-            (new TimeSpan(17, 0, 0), new TimeSpan(17, 59, 0), 13),
-            (new TimeSpan(18, 0, 0), new TimeSpan(18, 29, 0), 8),
-            (new TimeSpan(18, 30, 0), new TimeSpan(5, 59, 0), 0),
-            
-        };
+        _taxRules = taxRules;
 
         // Initialize toll-free vehicle types
-        tollFreeVehicleTypes = new HashSet<VehicleEnum>
-        {
-            VehicleEnum.Motorcycle,
-            VehicleEnum.Emergency,
-            VehicleEnum.Diplomat,
-            VehicleEnum.Foreign,
-            VehicleEnum.Military,
-            VehicleEnum.Bus
-        };
+        _tollFreeVehicleTypes = tollFreeVehicles;
     }
-
+   
     /**
          * Calculate the total toll fee for one day
          *
@@ -83,7 +63,7 @@ public class CongestionTaxCalculator
     {
         if (vehicle == null) return false;
 
-        return tollFreeVehicleTypes.Contains(vehicle.Type);
+        return _tollFreeVehicleTypes.Any(x => x.Type == vehicle.Type.ToString());
     }
 
     public int GetTollFee(DateTime date, IVehicle vehicle)
@@ -94,11 +74,11 @@ public class CongestionTaxCalculator
         int hour = date.Hour;
         int minute = date.Minute;
 
-        foreach (var rule in taxRules)
+        foreach (var rule in _taxRules)
         {
-            if (hour == rule.startTime.Hours && minute >= rule.startTime.Minutes && minute <= rule.endTime.Minutes)
+            if (hour == rule.StartTime.Hours && minute >= rule.StartTime.Minutes && minute <= rule.EndTime.Minutes)
             {
-                return rule.amount;
+                return rule.Amount;
             }
         }
 

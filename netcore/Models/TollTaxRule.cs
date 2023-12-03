@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace congestion.calculator.Models
 {
-    public class TaxRule : BaseModel
+    public class TollTaxRule : BaseModel
     {
         public int Amount { get; set; }
         public TimeSpan StartTime { get; set; }

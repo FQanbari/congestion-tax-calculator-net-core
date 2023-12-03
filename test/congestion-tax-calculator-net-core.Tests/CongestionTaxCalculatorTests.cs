@@ -1,18 +1,21 @@
 using congestion.calculator;
+using congestion.calculator.Service;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Xunit;
 
 namespace congestion_tax_calculator_net_core.Tests
 {
-    public class CongestionTaxCalculatorTests
+    public class CongestionTaxCalculatorTests :  IClassFixture<TaxCalculatorTestFixture>
     {
         private CongestionTaxCalculator calculator;
-
-        public CongestionTaxCalculatorTests()
+        private TaxCalculatorTestFixture _testFixture;
+        public CongestionTaxCalculatorTests(TaxCalculatorTestFixture fixture)
         {
-            calculator = new CongestionTaxCalculator();
+            _testFixture = fixture;
+            calculator = new CongestionTaxCalculator(_testFixture.TollTaxRules, _testFixture.TollFreeVehicles);
         }
         [Theory]
         [InlineData(VehicleEnum.Car, "", 0)]
